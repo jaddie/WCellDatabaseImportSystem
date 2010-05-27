@@ -18,10 +18,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="UDBMainDbFolderName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">\Full_DB</Value>
     </Setting>
     <Setting Name="UDBUpdatesFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">\Updates</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -24,6 +24,7 @@ namespace WCellDatabaseImportSystem
         public MainWindow()
         {
             InitializeComponent();
+            BtnRefreshDbListClick(null,null);
         }
 
         private void BtnConfig_Click(object sender, RoutedEventArgs e)
@@ -44,7 +45,7 @@ namespace WCellDatabaseImportSystem
                 if (Directory.Exists(meh.Default.UDBDir + meh.Default.UDBMainDbFolderName))
                 {
                     var udbDirDBs = new DirectoryInfo(meh.Default.UDBDir + meh.Default.UDBMainDbFolderName);
-                        var dBfiles = udbDirDBs.GetFiles(".sql", SearchOption.TopDirectoryOnly);
+                        var dBfiles = udbDirDBs.GetFiles("*.sql", SearchOption.AllDirectories);
                         foreach (var fileInfo in dBfiles)
                         {
                             LBoxMainDBFiles.Items.Add(fileInfo.Name);

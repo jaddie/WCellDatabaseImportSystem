@@ -85,7 +85,7 @@ namespace WCellDatabaseImportSystem.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Full_DB")]
         public string UDBMainDbFolderName {
             get {
                 return ((string)(this["UDBMainDbFolderName"]));
@@ -97,7 +97,7 @@ namespace WCellDatabaseImportSystem.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("\\Updates")]
         public string UDBUpdatesFolder {
             get {
                 return ((string)(this["UDBUpdatesFolder"]));

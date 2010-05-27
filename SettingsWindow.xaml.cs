@@ -13,6 +13,11 @@ namespace WCellDatabaseImportSystem
         public SettingsWindow()
         {
             InitializeComponent();
+            TBoxUser.Text = meh.Default.MysqlUsername;
+            TBoxPassword.Text = meh.Default.MysqlPassword;
+            TBoxHost.Text = meh.Default.MysqlHost;
+            TBoxDatabase.Text = meh.Default.MysqlDatabase;
+            TBoxUDBDir.Text = meh.Default.UDBDir;
         }
         /// <summary>
         /// Save the values which the user has provided in the textboxes after checking for nulls.
