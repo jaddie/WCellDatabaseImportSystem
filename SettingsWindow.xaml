@@ -1,17 +1,20 @@
 ﻿<Window x:Class="WCellDatabaseImportSystem.SettingsWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="SettingsWindow" Height="209" Width="300">
-    <Grid Height="168">
-        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="12,132,0,0" Name="BtnSave" VerticalAlignment="Top" Width="75" />
-        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="191,132,0,0" Name="BtnCancel" VerticalAlignment="Top" Width="75" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,12,0,0" Name="textBox1" VerticalAlignment="Top" Width="172" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,102,0,0" Name="textBox3" VerticalAlignment="Top" Width="172" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,72,0,0" Name="textBox4" VerticalAlignment="Top" Width="172" />
-        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,42,0,0" Name="textBox5" VerticalAlignment="Top" Width="172" />
+        Title="SettingsWindow" Height="230" Width="300">
+    <Grid Height="189">
+        <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="0,166,0,0" Name="BtnSave" VerticalAlignment="Top" Width="75" Click="BtnSave_Click" />
+        <Button Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="203,166,0,0" Name="BtnCancel" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,12,0,0" Name="TBoxHost" VerticalAlignment="Top" Width="172" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,102,0,0" Name="TBoxDatabase" VerticalAlignment="Top" Width="172" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,72,0,0" Name="TBoxPassword" VerticalAlignment="Top" Width="172" />
+        <TextBox Height="24" HorizontalAlignment="Left" Margin="94,42,0,0" Name="TBoxUser" VerticalAlignment="Top" Width="172" />
         <Label Content="Host" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" Width="75" />
         <Label Content="Database" Height="28" HorizontalAlignment="Left" Margin="12,98,0,0" Name="label3" VerticalAlignment="Top" Width="75" />
         <Label Content="Password" Height="28" HorizontalAlignment="Left" Margin="11,68,0,0" Name="label4" VerticalAlignment="Top" Width="75" />
         <Label Content="Username" Height="28" HorizontalAlignment="Left" Margin="12,42,0,0" Name="label5" VerticalAlignment="Top" Width="75" />
+        <Label Content="UDBDir" Height="28" HorizontalAlignment="Left" Margin="12,132,0,0" Name="label2" VerticalAlignment="Top" />
+        <Button Content="Browse" Height="28" HorizontalAlignment="Left" Margin="219,132,0,0" Name="BtnBrowseUDBDir" VerticalAlignment="Top" Width="47" Click="BtnBrowseUdbDirClick" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="94,132,0,0" Name="TBoxUDBDir" VerticalAlignment="Top" Width="120" />
     </Grid>
 </Window>
