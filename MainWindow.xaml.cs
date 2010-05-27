@@ -31,12 +31,12 @@ namespace WCellDatabaseImportSystem
             new SettingsWindow().ShowDialog();
         }
 
-        private void BtnApplyDBFile_Click(object sender, RoutedEventArgs e)
+        private void BtnApplyDbFileClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void BtnRefreshDBList_Click(object sender, RoutedEventArgs e)
+        private void BtnRefreshDbListClick(object sender, RoutedEventArgs e)
         {
             try
             {
