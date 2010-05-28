@@ -1,0 +1,8 @@
+﻿<Window x:Class="WCellDatabaseImportSystem.Output"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Output" Height="326" Width="460">
+    <Grid>
+        <TextBlock Height="287" HorizontalAlignment="Left" Name="TBoxOutput" Text="TextBlock" VerticalAlignment="Top" Width="438" />
+    </Grid>
+</Window>

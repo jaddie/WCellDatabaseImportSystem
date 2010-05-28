@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows;
 using meh = WCellDatabaseImportSystem.Properties.Settings;
-
+using System.Collections.Generic;
 namespace WCellDatabaseImportSystem
 {
     /// <summary>
@@ -23,23 +23,16 @@ namespace WCellDatabaseImportSystem
 
         private void BtnApplyDbFileClick(object sender, RoutedEventArgs e)
         {
-            MysqlHandler.Connect();
-            var file = meh.Default.UDBDir + meh.Default.UDBMainDbFolderName + LBoxMainDBFiles.Items.CurrentItem;
-            if(File.Exists(file))
-            {
-                var dbSql = new StreamReader(file);
-                while (!dbSql.EndOfStream)
+                var file = meh.Default.UDBDir + meh.Default.UDBMainDbFolderName + "\\" + LBoxMainDBFiles.SelectedValue;
+                if (File.Exists(file))
                 {
-                    var sql = dbSql.ReadLine();
-                    MysqlHandler.Command(sql);
+                    MysqlHandler.ImportLargeSql(file);
+                    MessageBox.Show("Import should be finished!");
                 }
-                dbSql.Close();
-                MessageBox.Show("Import should be finished!");
-            }
-            else
-            {
-                MessageBox.Show("The file selected could not be found, or there is a lack of permission to read it!");
-            }
+                else
+                {
+                    MessageBox.Show("The file selected could not be found, or there is a lack of permission to read it!");
+                }
         }
 
         private void BtnRefreshDbListClick(object sender, RoutedEventArgs e)

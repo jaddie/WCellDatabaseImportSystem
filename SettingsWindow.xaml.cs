@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using meh = WCellDatabaseImportSystem.Properties.Settings;
 using MessageBox = System.Windows.MessageBox;
+using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
 
 namespace WCellDatabaseImportSystem
 {
@@ -24,16 +25,17 @@ namespace WCellDatabaseImportSystem
         /// </summary>
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if(TBoxHost.Text == null | TBoxUser.Text == null | TBoxPassword.Text == null | TBoxDatabase.Text == null)
+            if(string.IsNullOrEmpty(TBoxHost.Text) | string.IsNullOrEmpty(TBoxUser.Text) | string.IsNullOrEmpty(TBoxPassword.Text) | string.IsNullOrEmpty(TBoxDatabase.Text))
             {
-                // TODO: Make a question asking if sure about nulls values instead
-                MessageBox.Show("One of the values has not been filled in, please check it.");
-                return;
+                if (MessageBox.Show("One of the variables seems to be null, are you sure you want to continue?", "Are you certain?", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.Yes) == MessageBoxResult.No)
+                {
+                    return;
+                }
             }
             meh.Default.MysqlHost = TBoxHost.Text;
             meh.Default.MysqlUsername = TBoxUser.Text;
             meh.Default.MysqlPassword = TBoxPassword.Text;
-            meh.Default.MysqlDatabase = TBoxUser.Text;
+            meh.Default.MysqlDatabase = TBoxDatabase.Text;
             meh.Default.Save();
             Close();
         }
