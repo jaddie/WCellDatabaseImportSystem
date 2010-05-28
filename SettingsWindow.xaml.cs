@@ -24,8 +24,9 @@ namespace WCellDatabaseImportSystem
         /// </summary>
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if(TBoxHost.Text != null | TBoxUser.Text != null | TBoxPassword.Text != null | TBoxDatabase.Text != null)
+            if(TBoxHost.Text == null | TBoxUser.Text == null | TBoxPassword.Text == null | TBoxDatabase.Text == null)
             {
+                // TODO: Make a question asking if sure about nulls values instead
                 MessageBox.Show("One of the values has not been filled in, please check it.");
                 return;
             }
