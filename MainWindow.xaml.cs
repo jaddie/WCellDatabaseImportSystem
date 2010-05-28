@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using meh = WCellDatabaseImportSystem.Properties.Settings;
 
 namespace WCellDatabaseImportSystem
@@ -34,7 +23,23 @@ namespace WCellDatabaseImportSystem
 
         private void BtnApplyDbFileClick(object sender, RoutedEventArgs e)
         {
-
+            MysqlHandler.Connect();
+            var file = meh.Default.UDBDir + meh.Default.UDBMainDbFolderName + LBoxMainDBFiles.Items.CurrentItem;
+            if(File.Exists(file))
+            {
+                var dbSql = new StreamReader(file);
+                while (!dbSql.EndOfStream)
+                {
+                    var sql = dbSql.ReadLine();
+                    MysqlHandler.Command(sql);
+                }
+                dbSql.Close();
+                MessageBox.Show("Import should be finished!");
+            }
+            else
+            {
+                MessageBox.Show("The file selected could not be found, or there is a lack of permission to read it!");
+            }
         }
 
         private void BtnRefreshDbListClick(object sender, RoutedEventArgs e)

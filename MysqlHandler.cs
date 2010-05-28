@@ -5,7 +5,7 @@ namespace WCellDatabaseImportSystem
 {
     class MysqlHandler
     {
-        static MySqlConnection Connect()
+        public static MySqlConnection Connect()
         {
             try
             {
@@ -17,6 +17,7 @@ namespace WCellDatabaseImportSystem
                                          Database = meh.Default.MysqlDatabase
                                      };
                 var conn = new MySqlConnection(connstring.ToString());
+                if(conn.State.ToString() != "Open")
                 conn.Open();
                 return conn;
             }
@@ -26,7 +27,7 @@ namespace WCellDatabaseImportSystem
                 return null;
             }
         }
-        static bool Command(string command)
+        public static bool Command(string command)
         {
             var sqlcommand = new MySqlCommand(command,Connect());
             var status = sqlcommand.ExecuteNonQuery();
