@@ -2,9 +2,9 @@
 
 namespace WCellDatabaseImportSystem
 {
-    class ErrorWriter
+    class LogWriter
     {
-        public static void Write(string value)
+        public static void WriteLine(string value)
         {
             var errorLog = new StreamWriter("ErrorLog.txt",true) {AutoFlush = true};
             errorLog.WriteLine(value);

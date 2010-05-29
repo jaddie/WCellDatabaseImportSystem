@@ -14,7 +14,7 @@ namespace WCellDatabaseImportSystem
             {
                 var args = string.Format("/c mysql.exe --host={0} --user {1} --port 3306 {2} < {3}", meh.Default.MysqlHost, meh.Default.MysqlUsername, meh.Default.MysqlDatabase,filename);
                 if(!string.IsNullOrEmpty(meh.Default.MysqlPassword))
-                    args = string.Format(" -h {0} --user {1} --password {2} --port 3306 {3} < {4}", meh.Default.MysqlHost, meh.Default.MysqlUsername, meh.Default.MysqlPassword, meh.Default.MysqlDatabase,filename);
+                    args = string.Format("/c mysql.exe -host={0} --user {1} --password {2} --port 3306 {3} < {4}", meh.Default.MysqlHost, meh.Default.MysqlUsername, meh.Default.MysqlPassword, meh.Default.MysqlDatabase,filename);
                 Mysql = new Process
                             {
                                 StartInfo =
@@ -23,7 +23,7 @@ namespace WCellDatabaseImportSystem
                                         Arguments = args,
                                         RedirectStandardInput = false,
                                         RedirectStandardOutput = false,
-                                        UseShellExecute = true,
+                                        UseShellExecute = false,
                                         CreateNoWindow = true
                                     }
                                 };
@@ -34,7 +34,7 @@ namespace WCellDatabaseImportSystem
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                ErrorWriter.Write(ex.Data + ex.Message + ex.StackTrace);
+                LogWriter.WriteLine(ex.Data + ex.Message + ex.StackTrace);
             }
         }
         public static void Command(string command)
@@ -49,14 +49,18 @@ namespace WCellDatabaseImportSystem
                                          Database = meh.Default.MysqlDatabase
                                      };
                 var connection = new MySqlConnection(connstring.ToString());
+                LogWriter.WriteLine(@"opening connection to mysql");
                 connection.Open();
+                LogWriter.WriteLine(@"connection successful!");
                 var sqlcommand = new MySqlCommand(command, connection);
+                LogWriter.WriteLine(@"Running sql command");
                 sqlcommand.ExecuteNonQuery();
+                LogWriter.WriteLine(@"Sql Command finished.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(@"An Error occured while importing the file!");
-                ErrorWriter.Write(ex.Data + ex.StackTrace + ex.Message);
+                MessageBox.Show(@"An Error occured while importing the file!, log output should have more info.");
+                LogWriter.WriteLine(ex.Data + ex.StackTrace + ex.Message);
             }
         }
     }
