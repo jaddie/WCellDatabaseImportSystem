@@ -8,8 +8,8 @@
     <ProjectGuid>{4B0B617B-24BD-4D2B-9F06-34E38E6C589A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WCellDatabaseImportSystem</RootNamespace>
-    <AssemblyName>WCellDatabaseImportSystem</AssemblyName>
+    <RootNamespace>WCell.DatabaseImportSystem</RootNamespace>
+    <AssemblyName>WCell.DatabaseImportSystem</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -34,6 +34,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data">

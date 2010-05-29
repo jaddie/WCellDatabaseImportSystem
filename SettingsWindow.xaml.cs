@@ -1,10 +1,10 @@
 ﻿using System.Windows;
 using System.Windows.Forms;
-using meh = WCellDatabaseImportSystem.Properties.Settings;
+using meh = WCell.DatabaseImportSystem.Properties.Settings;
 using MessageBox = System.Windows.MessageBox;
 using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
 
-namespace WCellDatabaseImportSystem
+namespace WCell.DatabaseImportSystem
 {
     /// <summary>
     /// Interaction logic for SettingsWindow.xaml

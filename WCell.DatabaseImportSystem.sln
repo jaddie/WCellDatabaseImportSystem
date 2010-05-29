@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCellDatabaseImportSystem", "WCellDatabaseImportSystem.csproj", "{4B0B617B-24BD-4D2B-9F06-34E38E6C589A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCell.DatabaseImportSystem", "WCell.DatabaseImportSystem.csproj", "{4B0B617B-24BD-4D2B-9F06-34E38E6C589A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

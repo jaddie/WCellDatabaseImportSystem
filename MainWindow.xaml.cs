@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
-using meh = WCellDatabaseImportSystem.Properties.Settings;
+using meh = WCell.DatabaseImportSystem.Properties.Settings;
 using System.Collections.Generic;
-namespace WCellDatabaseImportSystem
+namespace WCell.DatabaseImportSystem
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Diagnostics;
-using meh = WCellDatabaseImportSystem.Properties.Settings;
+using meh = WCell.DatabaseImportSystem.Properties.Settings;
 using MySql.Data.MySqlClient;
-namespace WCellDatabaseImportSystem
+namespace WCell.DatabaseImportSystem
 {
     class MysqlHandler
     {

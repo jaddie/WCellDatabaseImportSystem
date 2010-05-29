@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace WCellDatabaseImportSystem
+namespace WCell.DatabaseImportSystem
 {
     class LogWriter
     {
